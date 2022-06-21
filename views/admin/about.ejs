@@ -1,0 +1,45 @@
+<%- include('../partition/header.ejs') %>
+
+<section class="dashboard-wrap mtb-40">
+    <div class="container">
+        <div class="body-content">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="dash-left">
+                        <ul>
+                            <li class="active"><a href="/admin/dashboard">Dashboard</a></li>
+                            <li><a href="/admin/blog">Blogs</a></li>
+                            <li><a href="/admin/category">Categories</a></li>
+                            <li><a href="/admin/about" class="active">About</a></li>
+                            <li><a href="/admin/contact">Contact</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="col-md-9">
+                    <div class="dash-right">
+                        <h1>About</h1>
+                        <table class="table table-bordered table-striped">
+                            <tr>
+                                <th style="width: 80%;">About</th>
+                                <th>Action</th>
+                            </tr>
+                            
+                            <% data.forEach((a)=>{ %>
+                              <tr>
+                                <td><%= a.about  %></td>
+                                <td>
+                                    <a href="/admin/editAbout/<%= a._id %>" class="btn btn-primary save-btn">Edit</a>
+                                </td>
+                              </tr>
+                              <%  }) %>
+                           
+                        </table>
+                        
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<%- include('../partition/footer.ejs') %>
